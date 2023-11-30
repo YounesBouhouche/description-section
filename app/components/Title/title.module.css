@@ -1,0 +1,21 @@
+.container {
+    @apply absolute top-[10%] left-1/2 w-1/2 translate-x-0 z-10;
+    transition: 1s ease;
+}
+
+.container h1 {
+    @apply absolute left-0 font-bold text-5xl;
+    transition: 1s ease;
+}
+
+.container[step='2'], .container[step='4'] {
+    @apply top-[20%] left-[60%];
+}
+
+.container[step='1'] :not(h1:nth-child(1)),
+.container[step='2'] :not(h1:nth-child(2)),
+.container[step='3'] :not(h1:nth-child(3)),
+.container[step='4'] :not(h1:nth-child(4))
+{
+    @apply opacity-0
+}

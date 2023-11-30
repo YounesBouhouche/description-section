@@ -1,0 +1,25 @@
+.container {
+    @apply absolute bottom-0 left-[15%] font-bold w-1/2 scale-125  origin-bottom-left;
+    transition: 1s ease;
+}
+
+.container p {
+    @apply absolute bottom-0 py-10 w-3/4;
+    transition: 1s ease;
+}
+
+.container[step='1'] {
+    @apply left-1/4
+}
+
+.container[step='2'], .container[step='4'] {
+    @apply bottom-1/4 left-1/2 scale-100
+}
+
+.container[step='1'] :not(p:nth-child(1)),
+.container[step='2'] :not(p:nth-child(2)),
+.container[step='3'] :not(p:nth-child(3)),
+.container[step='4'] :not(p:nth-child(4))
+{
+    @apply opacity-0
+}

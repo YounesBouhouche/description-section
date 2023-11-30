@@ -1,0 +1,20 @@
+.container {
+    @apply absolute top-[10%] left-[15%] w-[385px] h-[430px] translate-y-0;
+    transition: 1s ease;
+}
+.container[step='2'], .container[step='4'] {
+    @apply top-[50%] left-[5%] -translate-y-1/2
+}
+
+.container img {
+    @apply absolute top-0 left-0 transition-opacity w-full h-full;
+    transition: 1s ease;
+}
+
+.container[step='1'] :not(img:nth-child(1)),
+.container[step='2'] :not(img:nth-child(2)),
+.container[step='3'] :not(img:nth-child(3)),
+.container[step='4'] :not(img:nth-child(4))
+{
+    @apply opacity-0
+}
